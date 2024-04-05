@@ -28,4 +28,4 @@ Na janela do terminal digite os seguintes comandos para cada dependência
 ```python app.py```
 
 ## Vídeos de demonstração
-Para visualizar na prática, assista esse [vídeo]([https://drive.google.com/file/d/1xy-nQlSTt--QaX_9QyFGXWm8VSDctYSr/view?usp=drive_link](https://drive.google.com/file/d/1Hcq1D3okN4tgJuLb69Iq5PmiVoXDvBY2/view?usp=drive_link)). 
+Para visualizar na prática, assista esse [vídeo](https://drive.google.com/file/d/1Hcq1D3okN4tgJuLb69Iq5PmiVoXDvBY2/view?usp=drive_link). 
