@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://unpkg.com/htmx.org"></script>
+    <link rel="stylesheet" href="static/estilo.css"/>
+    <title>Controle do Robô Dobot</title>
 </head>
 <body>
-    
+    <h1>Controle do Robô Dobot</h1>
+    <form id="form-mover" hx-post="/move" hx-target="#response" hx-swap="none">
+        <input type="number" name="x" placeholder="X" required>
+        <input type="number" name="y" placeholder="Y" required>
+        <input type="number" name="z" placeholder="Z" required>
+        <input type="hidden" name="r" value="0">
+        <button type="submit">Mover Robô</button>
+    </form>
+    <div id="response"></div>
+    <button hx-post="/home" hx-target="#response" hx-swap="none">Home Position</button>
+    <a href="/logs" class="button">Carregar Logs</a>
+    <div id="response"></div>
+
 </body>
+</html>
 </html>

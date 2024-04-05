@@ -10,16 +10,16 @@ db = TinyDB('dados/db.json')
 
 @app.route('/')
 def main():
-	return render_template('index.html')
+    return render_template('index.html')
 
 @app.route('/logs', methods=['GET'])
 def get_logs():
-    logs = db.all()
+    logs = db.table('logs').all()
     return render_template('logs.html', logs=logs)
 
 @app.route('/move', methods=['POST'])
 def move():
-    dados = request.json
+    dados = request.form
     x = dados.get("x")
     y = dados.get("y")
     z = dados.get("z")
@@ -33,8 +33,18 @@ def move():
     else:
         x, y, z, r = float(x), float(y), float(z), float(r)
         registrar_comando("Movimento - Movimento realizado com sucesso", x=x, y=y, z=z, r=r)
-        robot.move_to(x, y, z, 0)
+        robot.mover(x, y, z, 0)
     return render_template('index.html')
+
+@app.route('/home', methods=['POST'])
+def home():
+    try:
+        # Supondo que a função para mover o robô para a posição inicial seja home()
+        robot.home()
+        return jsonify({"success": "Robô movido para a posição inicial com sucesso!"}), 200
+    except Exception as e:
+        # Em caso de erro, retorna uma mensagem indicativa
+        return jsonify({"error": str(e)}), 500
 	
 def registrar_comando(descricao, **kwargs):
      now = datetime.now()

@@ -39,3 +39,8 @@ class TheRobot:
     def mover(self, x, y, z, r, wait=True):
         if self.robot:
             self.robot.move_to(x, y, z, r, wait=wait)
+
+    def home(self):
+        if self.robot:
+            x, y, z, r = 100, 0, 0, 0
+            self.robot.move_to(x, y, z, r, wait=True)

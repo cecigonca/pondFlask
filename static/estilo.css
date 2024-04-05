@@ -1,0 +1,64 @@
+body {
+    background-color: #e6e6e6; /* Cor de fundo suave */
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form#form-mover {
+    display: flex;
+    flex-direction: column; /* Isso coloca os elementos do formulário em coluna */
+    align-items: center; /* Centraliza os elementos na direção cruzada */
+    gap: 10px; /* Espaçamento entre os elementos do formulário */
+    margin-bottom: 20px; /* Espaço antes dos outros botões */
+}
+
+form#form-mover input[type="number"] {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px; /* Bordas arredondadas */
+    width: calc(100% - 24px); /* Ajuste de largura considerando padding e borda */
+}
+
+form#form-mover button {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Cor verde para o botão principal */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form#form-mover button:hover {
+    background-color: #45a049; /* Cor um pouco mais escura ao passar o mouse */
+}
+
+button, .button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #008CBA; /* Cor azul para os outros botões */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* Faz com que cada botão ocupe sua própria linha */
+    width: 200px; /* Largura fixa para os botões */
+    margin-left: auto;
+    margin-right: auto; /* Centraliza os botões */
+}
+
+button, .button:hover {
+    background-color: #007B9E; /* Cor um pouco mais escura ao passar o mouse */
+}
+
+#logs-container {
+    margin-top: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+}

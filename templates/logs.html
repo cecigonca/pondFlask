@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/estilo.css"/>
+    <title>Logs do Robô Dobot</title>
+</head>
+<body>
+    <h1>Logs do Robô Dobot</h1>
+    <ul>
+        {% for log in logs %}
+        <li>{{ log['date_time'] }} - {{ log['descricao'] }}
+            <ul>
+                {% for key, value in log['updates'].items() %}
+                <li>{{ key }}: {{ value }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Voltar</a>
+</body>
+</html>
